@@ -8,22 +8,26 @@ public class Fila<T> {
         return this.no == null;
     }
 
-    public void enqueue(No<T> no) {
-        no.setNextNo(this.no);
-        this.no = no;
+    public void enqueue(T value) {
+        No<T> newNo = new No<>(value);
+        newNo.setNextNo(this.no);
+        this.no = newNo;
     }
 
-    public No<T> first() {
-        No<T> currentNo = this.no;
+    public T first() {
+        if (!isEmpty()) {
+            No<T> currentNo = this.no;
 
-        while (currentNo.getNextNo() != null) {
-            currentNo = currentNo.getNextNo();
+            while (currentNo.getNextNo() != null) {
+                currentNo = currentNo.getNextNo();
+            }
+
+            return currentNo.getValue();
         }
-
-        return currentNo;
+        return null;
     }
 
-    public No<T> dequeue() {
+    public T dequeue() {
         if (!isEmpty()) {
 
             No<T> currentNo = this.no;
@@ -39,8 +43,8 @@ public class Fila<T> {
             }
 
             this.no = previousNo;
-            return currentNo;
+            return currentNo.getValue();
         }
-        return no;
+        return null;
     }
 }

@@ -1,28 +1,23 @@
 package main;
 
 import estruturas.Fila;
-import estruturas.No;
 import estruturas.Pilha;
 
 public class Main {
 
     public static void main(String[] args) {
-        No<String> firstNo = new No<>("First");
-        No<String> secondNo = new No<>("Second");
 
-        firstNo.setNextNo(secondNo);
-
-        System.out.println(firstNo);
-        System.out.println(firstNo.getNextNo());
+        final String FIRST = "Fist";
+        final String SECOND = "Second";
 
         System.out.println("\n-- TESTE PILHA --\n");
         Pilha<String> pilha = new Pilha<>();
 
         System.out.println(pilha.top());
         System.out.println(pilha.isEmpty());
-        pilha.push(firstNo);
+        pilha.push(FIRST);
         System.out.println(pilha.top());
-        pilha.push(secondNo);
+        pilha.push(SECOND);
         System.out.println(pilha.top());
         System.out.println(pilha.pop());
         System.out.println(pilha.pop());
@@ -32,11 +27,11 @@ public class Main {
 
         System.out.println(fila.dequeue());
         System.out.println(fila.isEmpty());
-        fila.enqueue(firstNo);
+        fila.enqueue(FIRST);
         System.out.println(fila.dequeue());
         System.out.println(fila.isEmpty());
-        fila.enqueue(firstNo);
-        fila.enqueue(secondNo);
+        fila.enqueue(FIRST);
+        fila.enqueue(SECOND);
         System.out.println(fila.first());
         System.out.println(fila.dequeue());
         System.out.println(fila.dequeue());

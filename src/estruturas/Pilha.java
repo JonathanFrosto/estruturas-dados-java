@@ -4,26 +4,33 @@ public class Pilha<T> {
 
     private No<T> no;
 
-    public No<T> top() {
-        return this.no;
+    public T top() {
+        if (!isEmpty()) {
+            return this.no.getValue();
+        }
+        return null;
     }
 
     public boolean isEmpty() {
         return this.no == null;
     }
 
-    public void push(No<T> no) {
-        no.setNextNo(this.no);
-        this.no = no;
+    public void push(T value) {
+        No<T> newNo = new No<>(value);
+        newNo.setNextNo(this.no);
+        this.no = newNo;
     }
 
-    public No<T> pop() {
-        No<T> currentNo = this.no;
+    public T pop() {
+        if (!isEmpty()) {
+            No<T> currentNo = this.no;
 
-        this.no = currentNo.getNextNo();
-        currentNo.setNextNo(null);
+            this.no = currentNo.getNextNo();
+            currentNo.setNextNo(null);
 
-        return currentNo;
+            return currentNo.getValue();
+        }
+        return null;
     }
 
 }

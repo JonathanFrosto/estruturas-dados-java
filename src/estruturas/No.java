@@ -1,12 +1,16 @@
 package estruturas;
 
-public class No<T> {
+class No<T> {
 
-    private T value;
+    private final T value;
     private No<T> nextNo;
 
     public No(T value) {
         this.value = value;
+    }
+
+    public T getValue() {
+        return value;
     }
 
     public No<T> getNextNo() {
