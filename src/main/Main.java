@@ -1,9 +1,6 @@
 package main;
 
-import estruturas.Fila;
-import estruturas.Lista;
-import estruturas.ListaDupla;
-import estruturas.Pilha;
+import estruturas.*;
 
 public class Main {
 
@@ -11,6 +8,9 @@ public class Main {
 
         final String FIRST = "First";
         final String SECOND = "Second";
+        final String THIRD = "Third";
+        final String fourth = "Fourth";
+        final String fifth = "Fifth";
 
         System.out.println("\n-- TESTE PILHA --\n");
         Pilha<String> pilha = new Pilha<>();
@@ -63,11 +63,12 @@ public class Main {
         System.out.println(listaDupla);
         listaDupla.add(SECOND);
         System.out.println(listaDupla);
-        listaDupla.add("Third");
+        listaDupla.add(THIRD);
         System.out.println(listaDupla);
-        listaDupla.add("Fourth", 0);
+
+        listaDupla.add(fourth, 0);
         System.out.println(listaDupla);
-        listaDupla.add("Fifth", 2);
+        listaDupla.add(fifth, 2);
         System.out.println(listaDupla);
         listaDupla.remove(2);
         System.out.println(listaDupla);
@@ -77,5 +78,25 @@ public class Main {
         System.out.println(listaDupla);
         System.out.println(listaDupla.get(1));
         System.out.println(listaDupla.get(0));
+
+        System.out.println("\n-- TESTE LISTA CIRCULAR --\n");
+        ListaCircular<String> listaCircular = new ListaCircular<>();
+
+        System.out.println(listaCircular.isEmpty());
+        System.out.println(listaCircular);
+        System.out.println(listaCircular.size());
+        listaCircular.add(FIRST);
+        System.out.println(listaCircular);
+        listaCircular.add(SECOND);
+        System.out.println(listaCircular);
+        listaCircular.add(THIRD);
+        System.out.println(listaCircular);
+        listaCircular.add(fourth, 1);
+        System.out.println(listaCircular);
+        listaCircular.add(fifth, 0);
+        System.out.println(listaCircular);
+        listaCircular.remove(4);
+        System.out.println(listaCircular);
+        System.out.println(listaCircular.get(1));
     }
 }
