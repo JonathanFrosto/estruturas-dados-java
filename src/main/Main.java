@@ -2,13 +2,14 @@ package main;
 
 import estruturas.Fila;
 import estruturas.Lista;
+import estruturas.ListaDupla;
 import estruturas.Pilha;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        final String FIRST = "Fist";
+        final String FIRST = "First";
         final String SECOND = "Second";
 
         System.out.println("\n-- TESTE PILHA --\n");
@@ -52,7 +53,29 @@ public class Main {
         System.out.println(lista.get(1));
         lista.remove(0);
         System.out.println(lista.get(0));
-        lista.remove(0);
-        System.out.println(lista.get(0));
+
+        System.out.println("\n-- TESTE LISTA DUPLA --\n");
+        ListaDupla<String> listaDupla = new ListaDupla<>();
+
+        System.out.println(listaDupla.isEmpty());
+        System.out.println(listaDupla);
+        listaDupla.add(FIRST);
+        System.out.println(listaDupla);
+        listaDupla.add(SECOND);
+        System.out.println(listaDupla);
+        listaDupla.add("Third");
+        System.out.println(listaDupla);
+        listaDupla.add("Fourth", 0);
+        System.out.println(listaDupla);
+        listaDupla.add("Fifth", 2);
+        System.out.println(listaDupla);
+        listaDupla.remove(2);
+        System.out.println(listaDupla);
+        listaDupla.remove(3);
+        System.out.println(listaDupla);
+        listaDupla.remove(0);
+        System.out.println(listaDupla);
+        System.out.println(listaDupla.get(1));
+        System.out.println(listaDupla.get(0));
     }
 }
