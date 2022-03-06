@@ -98,5 +98,20 @@ public class Main {
         listaCircular.remove(4);
         System.out.println(listaCircular);
         System.out.println(listaCircular.get(1));
+
+        System.out.println("\n-- TESTE LISTA CIRCULAR --\n");
+        ArvoreBinaria<Integer> arvoreBinaria = new ArvoreBinaria<>();
+
+        arvoreBinaria.add(5);
+        arvoreBinaria.add(6);
+        arvoreBinaria.add(2);
+        arvoreBinaria.add(1);
+        arvoreBinaria.add(3);
+        arvoreBinaria.add(4);
+        System.out.println(arvoreBinaria.inOrder());
+        arvoreBinaria.remove(5);
+        System.out.println(arvoreBinaria.inOrder());
+        System.out.println(arvoreBinaria.contains(5));
+        System.out.println(arvoreBinaria.contains(2));
     }
 }
